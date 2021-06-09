@@ -45,6 +45,8 @@
 		766A2B562670BFA40003A37E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A2B352670BFA40003A37E /* Globals.swift */; };
 		768521132670C2A300732553 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768521122670C2A300732553 /* LoginModel.swift */; };
 		768521172670CE7C00732553 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768521162670CE7C00732553 /* LoginViewController.swift */; };
+		76B48C2D26710EE000AF6D31 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B48C2C26710EE000AF6D31 /* NotificationsViewController.swift */; };
+		76B48C3026710F5100AF6D31 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B48C2F26710F5100AF6D31 /* NotificationTableViewCell.swift */; };
 		76EF05402670E602007ABC58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF053F2670E602007ABC58 /* HomeViewController.swift */; };
 		76EF05442670E625007ABC58 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF05432670E625007ABC58 /* HomeCollectionViewCell.swift */; };
 		76EF05472670F33B007ABC58 /* NavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF05462670F33B007ABC58 /* NavigationBarExtension.swift */; };
@@ -97,6 +99,8 @@
 		766A2B352670BFA40003A37E /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		768521122670C2A300732553 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		768521162670CE7C00732553 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		76B48C2C26710EE000AF6D31 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		76B48C2F26710F5100AF6D31 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		76EF053F2670E602007ABC58 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		76EF05432670E625007ABC58 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		76EF05462670F33B007ABC58 /* NavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarExtension.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 		7685210D2670C24E00732553 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76B48C2826710EB000AF6D31 /* Notifications */,
+				76B48C2726710EA500AF6D31 /* Local Map */,
 				76EF05632671036C007ABC58 /* Tabbar Controller */,
 				76EF05492670F556007ABC58 /* Navigation Controller */,
 				76EF053B2670E5E2007ABC58 /* Home */,
@@ -256,6 +262,46 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		76B48C2726710EA500AF6D31 /* Local Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Local Map";
+			sourceTree = "<group>";
+		};
+		76B48C2826710EB000AF6D31 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				76B48C2B26710EC600AF6D31 /* Model */,
+				76B48C2A26710EC200AF6D31 /* View */,
+				76B48C2926710EBA00AF6D31 /* Controller */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		76B48C2926710EBA00AF6D31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76B48C2C26710EE000AF6D31 /* NotificationsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		76B48C2A26710EC200AF6D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76B48C2F26710F5100AF6D31 /* NotificationTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76B48C2B26710EC600AF6D31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		76EF05392670E572007ABC58 /* Signup */ = {
@@ -468,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B48C3026710F5100AF6D31 /* NotificationTableViewCell.swift in Sources */,
 				768521172670CE7C00732553 /* LoginViewController.swift in Sources */,
 				76EF05472670F33B007ABC58 /* NavigationBarExtension.swift in Sources */,
 				766A2B4B2670BFA40003A37E /* DateTimeHelper.swift in Sources */,
@@ -498,6 +545,7 @@
 				766A2B432670BFA40003A37E /* AppStoryBoard.swift in Sources */,
 				766A2B442670BFA40003A37E /* UITextView+Additions.swift in Sources */,
 				766A2B3F2670BFA40003A37E /* UITexfield+Additions.swift in Sources */,
+				76B48C2D26710EE000AF6D31 /* NotificationsViewController.swift in Sources */,
 				766A2B3E2670BFA40003A37E /* Extensions.swift in Sources */,
 				766A2B4C2670BFA40003A37E /* ValidationHelper.swift in Sources */,
 				766A2AFC2670BE730003A37E /* AppDelegate.swift in Sources */,

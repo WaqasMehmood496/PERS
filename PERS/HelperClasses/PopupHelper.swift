@@ -156,7 +156,13 @@ class PopupHelper
         controler.present(alertController, animated: true, completion: nil)
         
         
-        
+    
+    }
+    static func changeRootView(storyboardName:String,ViewControllerId:String){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: ViewControllerId) as! UITabBarController
+        UIApplication.shared.windows.first?.rootViewController = viewController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
 }
 

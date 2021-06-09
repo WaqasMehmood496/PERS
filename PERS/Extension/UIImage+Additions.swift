@@ -9,7 +9,7 @@
 import UIKit
 
 class UIImage_Additions: NSObject {
-
+    
 }
 extension UIImage {
     func makeImageWithColorAndSize(color: UIColor, size: CGSize) -> UIImage {
@@ -22,6 +22,7 @@ extension UIImage {
     }
 }
 extension UIImage {
+    
     //    public func urlToImage(urlString: String) -> UIImage{
     //
     //        let url = NSURL(string: Variables.SERVER_IP + "/" + urlString)
@@ -120,5 +121,14 @@ extension UIImage {
         } else {
             return nil
         }
+    }
+    
+    func createSelectionIndicator(color: UIColor, size: CGSize, lineWidth: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(CGRect(x: 0, y: size.height - lineWidth, width: size.width, height: lineWidth))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
     }
 }

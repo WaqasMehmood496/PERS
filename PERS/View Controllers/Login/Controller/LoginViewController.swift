@@ -19,5 +19,14 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: ACTION'S
-
+    @IBAction func LoginBtnAction(_ sender: Any) {
+        PopupHelper.changeRootView(storyboardName: "Main", ViewControllerId: "Tabbar")
+    }
+    @IBAction func SignUpBtnAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "toSignUp", sender: nil)
+    }
+    @IBAction func ForgotPasswordBtnAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "toForgotPassword", sender: nil)
+    }
+    
 }

@@ -45,6 +45,11 @@
 		766A2B562670BFA40003A37E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A2B352670BFA40003A37E /* Globals.swift */; };
 		768521132670C2A300732553 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768521122670C2A300732553 /* LoginModel.swift */; };
 		768521172670CE7C00732553 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768521162670CE7C00732553 /* LoginViewController.swift */; };
+		76EF05402670E602007ABC58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF053F2670E602007ABC58 /* HomeViewController.swift */; };
+		76EF05442670E625007ABC58 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF05432670E625007ABC58 /* HomeCollectionViewCell.swift */; };
+		76EF05472670F33B007ABC58 /* NavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF05462670F33B007ABC58 /* NavigationBarExtension.swift */; };
+		76EF054D2670F5A8007ABC58 /* GradientNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF054C2670F5A8007ABC58 /* GradientNavigationVC.swift */; };
+		76EF0566267103A5007ABC58 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF0565267103A5007ABC58 /* TabbarController.swift */; };
 		D26A51EB838F5F21A97D7798 /* Pods_PERS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2E921E023D7B3C2DD5C26A /* Pods_PERS.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +97,11 @@
 		766A2B352670BFA40003A37E /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		768521122670C2A300732553 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		768521162670CE7C00732553 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		76EF053F2670E602007ABC58 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		76EF05432670E625007ABC58 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		76EF05462670F33B007ABC58 /* NavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarExtension.swift; sourceTree = "<group>"; };
+		76EF054C2670F5A8007ABC58 /* GradientNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientNavigationVC.swift; sourceTree = "<group>"; };
+		76EF0565267103A5007ABC58 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +168,7 @@
 				766A2B1E2670BFA40003A37E /* Utility.swift */,
 				766A2B1F2670BFA40003A37E /* AppStoryBoard.swift */,
 				766A2B202670BFA40003A37E /* UITextView+Additions.swift */,
+				76EF05462670F33B007ABC58 /* NavigationBarExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -204,6 +215,11 @@
 		7685210D2670C24E00732553 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76EF05632671036C007ABC58 /* Tabbar Controller */,
+				76EF05492670F556007ABC58 /* Navigation Controller */,
+				76EF053B2670E5E2007ABC58 /* Home */,
+				76EF053A2670E57C007ABC58 /* Forgot Password */,
+				76EF05392670E572007ABC58 /* Signup */,
 				7685210E2670C25D00732553 /* Login */,
 			);
 			path = "View Controllers";
@@ -240,6 +256,85 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		76EF05392670E572007ABC58 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		76EF053A2670E57C007ABC58 /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
+		76EF053B2670E5E2007ABC58 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				76EF053E2670E5F2007ABC58 /* Model */,
+				76EF053D2670E5EE007ABC58 /* View */,
+				76EF053C2670E5E7007ABC58 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		76EF053C2670E5E7007ABC58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76EF053F2670E602007ABC58 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		76EF053D2670E5EE007ABC58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76EF05432670E625007ABC58 /* HomeCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76EF053E2670E5F2007ABC58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		76EF05492670F556007ABC58 /* Navigation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76EF054A2670F565007ABC58 /* Controller */,
+			);
+			path = "Navigation Controller";
+			sourceTree = "<group>";
+		};
+		76EF054A2670F565007ABC58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76EF054C2670F5A8007ABC58 /* GradientNavigationVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		76EF05632671036C007ABC58 /* Tabbar Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76EF05642671037C007ABC58 /* Controller */,
+			);
+			path = "Tabbar Controller";
+			sourceTree = "<group>";
+		};
+		76EF05642671037C007ABC58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76EF0565267103A5007ABC58 /* TabbarController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		88AEF5303AD5F4A5F0F8FACA /* Pods */ = {
@@ -374,12 +469,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				768521172670CE7C00732553 /* LoginViewController.swift in Sources */,
+				76EF05472670F33B007ABC58 /* NavigationBarExtension.swift in Sources */,
 				766A2B4B2670BFA40003A37E /* DateTimeHelper.swift in Sources */,
 				766A2B4A2670BFA40003A37E /* PopupHelper.swift in Sources */,
 				766A2B402670BFA40003A37E /* UIPopUp+Additions.swift in Sources */,
 				766A2B3D2670BFA40003A37E /* CameraViewController.swift in Sources */,
 				766A2B502670BFA40003A37E /* DataBaseHelper.swift in Sources */,
 				766A2B382670BFA40003A37E /* UIView+Additions.swift in Sources */,
+				76EF054D2670F5A8007ABC58 /* GradientNavigationVC.swift in Sources */,
 				766A2B392670BFA40003A37E /* UIViewController+Additions.swift in Sources */,
 				766A2B552670BFA40003A37E /* Constant.swift in Sources */,
 				766A2B562670BFA40003A37E /* Globals.swift in Sources */,
@@ -396,12 +493,15 @@
 				766A2B512670BFA40003A37E /* NetworkConnection.swift in Sources */,
 				766A2B472670BFA40003A37E /* WebServicesHelper.swift in Sources */,
 				766A2B4F2670BFA40003A37E /* NVActivityIndicatorViewable.swift in Sources */,
+				76EF05402670E602007ABC58 /* HomeViewController.swift in Sources */,
+				76EF05442670E625007ABC58 /* HomeCollectionViewCell.swift in Sources */,
 				766A2B432670BFA40003A37E /* AppStoryBoard.swift in Sources */,
 				766A2B442670BFA40003A37E /* UITextView+Additions.swift in Sources */,
 				766A2B3F2670BFA40003A37E /* UITexfield+Additions.swift in Sources */,
 				766A2B3E2670BFA40003A37E /* Extensions.swift in Sources */,
 				766A2B4C2670BFA40003A37E /* ValidationHelper.swift in Sources */,
 				766A2AFC2670BE730003A37E /* AppDelegate.swift in Sources */,
+				76EF0566267103A5007ABC58 /* TabbarController.swift in Sources */,
 				766A2B422670BFA40003A37E /* Utility.swift in Sources */,
 				766A2B4E2670BFA40003A37E /* ViewControllerHelper.swift in Sources */,
 				766A2B362670BFA40003A37E /* BadgedBarButtonItem.swift in Sources */,

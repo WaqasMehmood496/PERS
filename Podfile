@@ -16,4 +16,5 @@ pod 'AlamofireImage'
 pod 'SQLite.swift'
 pod 'SwiftyJSON'
 pod 'PhoneNumberKit'
+pod 'ChameleonFramework/Swift'
 end

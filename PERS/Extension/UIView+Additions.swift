@@ -186,8 +186,8 @@ extension UIView{
         //            2
         //        )
         
-        gradient.endPoint = CGPoint(x: CGFloat(0),y: CGFloat(0))
-        gradient.startPoint = CGPoint(x: CGFloat(1), y: CGFloat(1))
+        gradient.endPoint = CGPoint(x: CGFloat(1),y: CGFloat(1))
+        gradient.startPoint = CGPoint(x: CGFloat(0), y: CGFloat(0))
         
         gradientLayerView.layer.insertSublayer(gradient, at: 0)
         layer.insertSublayer(gradientLayerView.layer, at: 0)

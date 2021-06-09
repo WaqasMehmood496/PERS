@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		766A2AFC2670BE730003A37E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A2AFB2670BE730003A37E /* AppDelegate.swift */; };
-		766A2B002670BE730003A37E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A2AFF2670BE730003A37E /* ViewController.swift */; };
 		766A2B032670BE730003A37E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766A2B012670BE730003A37E /* Main.storyboard */; };
 		766A2B052670BE750003A37E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 766A2B042670BE750003A37E /* Assets.xcassets */; };
 		766A2B082670BE750003A37E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766A2B062670BE750003A37E /* LaunchScreen.storyboard */; };
@@ -45,6 +44,7 @@
 		766A2B552670BFA40003A37E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A2B342670BFA40003A37E /* Constant.swift */; };
 		766A2B562670BFA40003A37E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A2B352670BFA40003A37E /* Globals.swift */; };
 		768521132670C2A300732553 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768521122670C2A300732553 /* LoginModel.swift */; };
+		768521172670CE7C00732553 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768521162670CE7C00732553 /* LoginViewController.swift */; };
 		D26A51EB838F5F21A97D7798 /* Pods_PERS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2E921E023D7B3C2DD5C26A /* Pods_PERS.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +54,6 @@
 		557E94BD5E6A605ECAC14E5B /* Pods-PERS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PERS.release.xcconfig"; path = "Target Support Files/Pods-PERS/Pods-PERS.release.xcconfig"; sourceTree = "<group>"; };
 		766A2AF82670BE730003A37E /* PERS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PERS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		766A2AFB2670BE730003A37E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		766A2AFF2670BE730003A37E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		766A2B022670BE730003A37E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		766A2B042670BE750003A37E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		766A2B072670BE750003A37E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,6 +91,7 @@
 		766A2B342670BFA40003A37E /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		766A2B352670BFA40003A37E /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		768521122670C2A300732553 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		768521162670CE7C00732553 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,6 @@
 				766A2B332670BFA40003A37E /* Global */,
 				766A2B212670BFA40003A37E /* HelperClasses */,
 				766A2AFB2670BE730003A37E /* AppDelegate.swift */,
-				766A2AFF2670BE730003A37E /* ViewController.swift */,
 				766A2B012670BE730003A37E /* Main.storyboard */,
 				766A2B042670BE750003A37E /* Assets.xcassets */,
 				766A2B062670BE750003A37E /* LaunchScreen.storyboard */,
@@ -223,6 +222,7 @@
 		7685210F2670C26B00732553 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				768521162670CE7C00732553 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -373,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768521172670CE7C00732553 /* LoginViewController.swift in Sources */,
 				766A2B4B2670BFA40003A37E /* DateTimeHelper.swift in Sources */,
 				766A2B4A2670BFA40003A37E /* PopupHelper.swift in Sources */,
 				766A2B402670BFA40003A37E /* UIPopUp+Additions.swift in Sources */,
@@ -393,7 +394,6 @@
 				766A2B452670BFA40003A37E /* NVActivityIndicatorPresenter.swift in Sources */,
 				766A2B492670BFA40003A37E /* LanguageHelper.swift in Sources */,
 				766A2B512670BFA40003A37E /* NetworkConnection.swift in Sources */,
-				766A2B002670BE730003A37E /* ViewController.swift in Sources */,
 				766A2B472670BFA40003A37E /* WebServicesHelper.swift in Sources */,
 				766A2B4F2670BFA40003A37E /* NVActivityIndicatorViewable.swift in Sources */,
 				766A2B432670BFA40003A37E /* AppStoryBoard.swift in Sources */,

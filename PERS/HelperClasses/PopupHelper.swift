@@ -164,5 +164,11 @@ class PopupHelper
         UIApplication.shared.windows.first?.rootViewController = viewController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
+    static func changeRootViewController(storyboardName:String,ViewControllerId:String){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: ViewControllerId)
+        UIApplication.shared.windows.first?.rootViewController = viewController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
 }
 

@@ -5,6 +5,12 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - GoogleMaps (5.0.0):
+    - GoogleMaps/Maps (= 5.0.0)
+  - GoogleMaps/Base (5.0.0)
+  - GoogleMaps/Maps (5.0.0):
+    - GoogleMaps/Base
+  - GooglePlaces (5.0.0)
   - IQKeyboardManagerSwift (6.5.6)
   - JGProgressHUD (2.2)
   - JXSegmentedView (1.2.7)
@@ -29,6 +35,8 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - ChameleonFramework/Swift
+  - GoogleMaps
+  - GooglePlaces
   - IQKeyboardManagerSwift
   - JGProgressHUD
   - JXSegmentedView
@@ -43,6 +51,8 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - ChameleonFramework
+    - GoogleMaps
+    - GooglePlaces
     - IQKeyboardManagerSwift
     - JGProgressHUD
     - JXSegmentedView
@@ -57,6 +67,8 @@ SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  GoogleMaps: 600e5e69bdf7f4ed7cac4d6aa96c7ec08a5aa254
+  GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   JXSegmentedView: eb1cad21f57c2543c00c3e08b8fd3c7ca54f5acd
@@ -67,6 +79,6 @@ SPEC CHECKSUMS:
   SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: c12f2e2786623404e1befa18ee32e67b36831e5a
+PODFILE CHECKSUM: 951c3fc8bbb510649c0452466f0318a2b0975b49
 
 COCOAPODS: 1.10.1

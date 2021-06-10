@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     //MARK: IBOUTLET'S
     @IBOutlet weak var MyAreaCV: UICollectionView!
     @IBOutlet weak var RecentlyAddedCV: UICollectionView!
@@ -20,7 +20,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.collectionViewSetup()
     }
-
 }
 
 extension HomeViewController{
@@ -50,7 +49,14 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideosCell", for: indexPath) as! HomeCollectionViewCell
+        cell.PlayButton.addTarget(self, action: #selector(PlayVideoBtnAction(_:)), for: .touchUpInside)
+        cell.PlayButton.tag = indexPath.row
         return cell
+    }
+    
+    @objc func PlayVideoBtnAction(_ sender:UIButton){
+        let friendListVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "PlayerVC") as! PlayerViewController
+        self.navigationController?.pushViewController(friendListVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

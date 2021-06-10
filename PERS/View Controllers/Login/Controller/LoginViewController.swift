@@ -8,14 +8,18 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     // MARK: IBOUTLET'S
+    @IBOutlet weak var EmailAddressTF: UITextField!
+    @IBOutlet weak var PasswordTF: UITextField!
+    @IBOutlet weak var LoginButton: UIButton!
     
     // MARK: VARIABLE'S
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
     }
     
     // MARK: ACTION'S
@@ -29,4 +33,18 @@ class LoginViewController: UIViewController {
         self.performSegue(withIdentifier: "toForgotPassword", sender: nil)
     }
     
+}
+
+//MARK:- FUNCTION'S EXTENSION
+extension LoginViewController{
+    func setupUI() {
+        EmailAddressTF.setLeftPaddingPoints(8)
+        PasswordTF.setLeftPaddingPoints(8)
+        EmailAddressTF.setRightPaddingPoints(8)
+        PasswordTF.setRightPaddingPoints(8)
+        guard let darkColor = UIColor(named: "Gradient Dark Color")?.cgColor else{return}
+        guard let lightColor = UIColor(named: "Gradient Light Color")?.cgColor else{return}
+        LoginButton.setGradient(colors: [darkColor,lightColor])
+        LoginButton.clipsToBounds = true
+    }
 }

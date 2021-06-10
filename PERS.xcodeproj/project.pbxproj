@@ -43,8 +43,16 @@
 		766A2B542670BFA40003A37E /* DatabaseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A2B322670BFA40003A37E /* DatabaseRepresentation.swift */; };
 		766A2B552670BFA40003A37E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A2B342670BFA40003A37E /* Constant.swift */; };
 		766A2B562670BFA40003A37E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A2B352670BFA40003A37E /* Globals.swift */; };
+		7675696F26721E0D0040A593 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7675696E26721E0D0040A593 /* ProfileViewController.swift */; };
+		767569742672205E0040A593 /* AddFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767569732672205E0040A593 /* AddFriendsViewController.swift */; };
+		7675697C26722B210040A593 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7675697B26722B210040A593 /* PlayerViewController.swift */; };
+		76756991267239BE0040A593 /* LocalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76756990267239BE0040A593 /* LocalMapViewController.swift */; };
+		7675699526723B2B0040A593 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 7675699426723B2B0040A593 /* style.json */; };
+		7675699A26723B650040A593 /* MapMarkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7675699926723B650040A593 /* MapMarkerModel.swift */; };
 		768521132670C2A300732553 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768521122670C2A300732553 /* LoginModel.swift */; };
 		768521172670CE7C00732553 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768521162670CE7C00732553 /* LoginViewController.swift */; };
+		76A2B3382672089900802C4D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A2B3372672089900802C4D /* SignUpViewController.swift */; };
+		76A2B33B26720DB900802C4D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A2B33A26720DB900802C4D /* ForgotPasswordViewController.swift */; };
 		76B48C2D26710EE000AF6D31 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B48C2C26710EE000AF6D31 /* NotificationsViewController.swift */; };
 		76B48C3026710F5100AF6D31 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B48C2F26710F5100AF6D31 /* NotificationTableViewCell.swift */; };
 		76EF05402670E602007ABC58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF053F2670E602007ABC58 /* HomeViewController.swift */; };
@@ -97,8 +105,16 @@
 		766A2B322670BFA40003A37E /* DatabaseRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRepresentation.swift; sourceTree = "<group>"; };
 		766A2B342670BFA40003A37E /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		766A2B352670BFA40003A37E /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		7675696E26721E0D0040A593 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		767569732672205E0040A593 /* AddFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsViewController.swift; sourceTree = "<group>"; };
+		7675697B26722B210040A593 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		76756990267239BE0040A593 /* LocalMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMapViewController.swift; sourceTree = "<group>"; };
+		7675699426723B2B0040A593 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		7675699926723B650040A593 /* MapMarkerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMarkerModel.swift; sourceTree = "<group>"; };
 		768521122670C2A300732553 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		768521162670CE7C00732553 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		76A2B3372672089900802C4D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		76A2B33A26720DB900802C4D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		76B48C2C26710EE000AF6D31 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		76B48C2F26710F5100AF6D31 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		76EF053F2670E602007ABC58 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +167,7 @@
 				766A2B042670BE750003A37E /* Assets.xcassets */,
 				766A2B062670BE750003A37E /* LaunchScreen.storyboard */,
 				766A2B092670BE750003A37E /* Info.plist */,
+				7675699426723B2B0040A593 /* style.json */,
 			);
 			path = PERS;
 			sourceTree = "<group>";
@@ -216,9 +233,107 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		7675696B26721DF50040A593 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7675696D26721E010040A593 /* View */,
+				7675696C26721DFC0040A593 /* Controller */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7675696C26721DFC0040A593 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7675696E26721E0D0040A593 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7675696D26721E010040A593 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		767569712672203D0040A593 /* Add Friends */ = {
+			isa = PBXGroup;
+			children = (
+				76756972267220470040A593 /* Controller */,
+			);
+			path = "Add Friends";
+			sourceTree = "<group>";
+		};
+		76756972267220470040A593 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				767569732672205E0040A593 /* AddFriendsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7675697626722AC80040A593 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				7675697A26722B010040A593 /* Model */,
+				7675697826722AF90040A593 /* View */,
+				7675697726722ADC0040A593 /* Controller */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		7675697726722ADC0040A593 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7675697B26722B210040A593 /* PlayerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7675697826722AF90040A593 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7675697A26722B010040A593 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7675698F267239AD0040A593 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76756990267239BE0040A593 /* LocalMapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7675699726723B4E0040A593 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7675699826723B5C0040A593 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7675699926723B650040A593 /* MapMarkerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7685210D2670C24E00732553 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7675697626722AC80040A593 /* Player */,
+				767569712672203D0040A593 /* Add Friends */,
+				7675696B26721DF50040A593 /* Profile */,
 				76B48C2826710EB000AF6D31 /* Notifications */,
 				76B48C2726710EA500AF6D31 /* Local Map */,
 				76EF05632671036C007ABC58 /* Tabbar Controller */,
@@ -264,9 +379,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		76A2B3362672088000802C4D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76A2B3372672089900802C4D /* SignUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		76B48C2726710EA500AF6D31 /* Local Map */ = {
 			isa = PBXGroup;
 			children = (
+				7675699826723B5C0040A593 /* Model */,
+				7675699726723B4E0040A593 /* View */,
+				7675698F267239AD0040A593 /* Controller */,
 			);
 			path = "Local Map";
 			sourceTree = "<group>";
@@ -307,6 +433,7 @@
 		76EF05392670E572007ABC58 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				76A2B3362672088000802C4D /* Controller */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -314,6 +441,7 @@
 		76EF053A2670E57C007ABC58 /* Forgot Password */ = {
 			isa = PBXGroup;
 			children = (
+				76A2B33A26720DB900802C4D /* ForgotPasswordViewController.swift */,
 			);
 			path = "Forgot Password";
 			sourceTree = "<group>";
@@ -412,6 +540,7 @@
 				766A2AF52670BE730003A37E /* Frameworks */,
 				766A2AF62670BE730003A37E /* Resources */,
 				57C12E598F5CFC6B697EFDB2 /* [CP] Embed Pods Frameworks */,
+				18A8354F04CCC8D4664A7311 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -462,12 +591,30 @@
 				766A2B082670BE750003A37E /* LaunchScreen.storyboard in Resources */,
 				766A2B052670BE750003A37E /* Assets.xcassets in Resources */,
 				766A2B032670BE730003A37E /* Main.storyboard in Resources */,
+				7675699526723B2B0040A593 /* style.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		18A8354F04CCC8D4664A7311 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PERS/Pods-PERS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PERS/Pods-PERS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PERS/Pods-PERS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4549DDC0303D6FDCFE72E94E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,7 +665,9 @@
 				768521172670CE7C00732553 /* LoginViewController.swift in Sources */,
 				76EF05472670F33B007ABC58 /* NavigationBarExtension.swift in Sources */,
 				766A2B4B2670BFA40003A37E /* DateTimeHelper.swift in Sources */,
+				76A2B3382672089900802C4D /* SignUpViewController.swift in Sources */,
 				766A2B4A2670BFA40003A37E /* PopupHelper.swift in Sources */,
+				767569742672205E0040A593 /* AddFriendsViewController.swift in Sources */,
 				766A2B402670BFA40003A37E /* UIPopUp+Additions.swift in Sources */,
 				766A2B3D2670BFA40003A37E /* CameraViewController.swift in Sources */,
 				766A2B502670BFA40003A37E /* DataBaseHelper.swift in Sources */,
@@ -527,6 +676,7 @@
 				766A2B392670BFA40003A37E /* UIViewController+Additions.swift in Sources */,
 				766A2B552670BFA40003A37E /* Constant.swift in Sources */,
 				766A2B562670BFA40003A37E /* Globals.swift in Sources */,
+				76756991267239BE0040A593 /* LocalMapViewController.swift in Sources */,
 				766A2B482670BFA40003A37E /* AlamofireHelper.swift in Sources */,
 				766A2B522670BFA40003A37E /* WebServiceResponseDelegate.swift in Sources */,
 				766A2B542670BFA40003A37E /* DatabaseRepresentation.swift in Sources */,
@@ -537,6 +687,7 @@
 				766A2B3C2670BFA40003A37E /* UIButton+Additions.swift in Sources */,
 				766A2B452670BFA40003A37E /* NVActivityIndicatorPresenter.swift in Sources */,
 				766A2B492670BFA40003A37E /* LanguageHelper.swift in Sources */,
+				76A2B33B26720DB900802C4D /* ForgotPasswordViewController.swift in Sources */,
 				766A2B512670BFA40003A37E /* NetworkConnection.swift in Sources */,
 				766A2B472670BFA40003A37E /* WebServicesHelper.swift in Sources */,
 				766A2B4F2670BFA40003A37E /* NVActivityIndicatorViewable.swift in Sources */,
@@ -550,10 +701,13 @@
 				766A2B4C2670BFA40003A37E /* ValidationHelper.swift in Sources */,
 				766A2AFC2670BE730003A37E /* AppDelegate.swift in Sources */,
 				76EF0566267103A5007ABC58 /* TabbarController.swift in Sources */,
+				7675697C26722B210040A593 /* PlayerViewController.swift in Sources */,
 				766A2B422670BFA40003A37E /* Utility.swift in Sources */,
 				766A2B4E2670BFA40003A37E /* ViewControllerHelper.swift in Sources */,
 				766A2B362670BFA40003A37E /* BadgedBarButtonItem.swift in Sources */,
+				7675699A26723B650040A593 /* MapMarkerModel.swift in Sources */,
 				766A2B4D2670BFA40003A37E /* AsyncUtil.swift in Sources */,
+				7675696F26721E0D0040A593 /* ProfileViewController.swift in Sources */,
 				766A2B372670BFA40003A37E /* UIImage+Additions.swift in Sources */,
 				766A2B532670BFA40003A37E /* WebServiceDataParsingDelegate.swift in Sources */,
 			);

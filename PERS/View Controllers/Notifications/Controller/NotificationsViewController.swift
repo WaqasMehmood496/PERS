@@ -44,11 +44,11 @@ extension NotificationsViewController:UITableViewDelegate,UITableViewDataSource{
         let label = UILabel()
         label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         label.text = self.sectionsNameArray[section]
-        label.font = .systemFont(ofSize: 20)
+        //label.font = .systemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = UIColor(named: "Text Black Color")
         label.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         headerView.addSubview(label)
-        
         return headerView
     }
     

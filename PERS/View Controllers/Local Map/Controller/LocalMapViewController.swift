@@ -21,7 +21,6 @@ class LocalMapViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         setupGoogleMap()
-        // Do any additional setup after loading the view.
     }
 }
 

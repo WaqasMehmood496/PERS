@@ -26,6 +26,11 @@ extension AddFriendsViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendListCell", for: indexPath) as! NotificationTableViewCell
+        cell.AddFriendBtn.addTarget(self, action: #selector(AddFriendBtnAction(_:)), for: .touchUpInside)
+        cell.AddFriendBtn.tag = indexPath.row
         return cell
+    }
+    @objc func AddFriendBtnAction(_ sender:UIButton){
+        
     }
 }

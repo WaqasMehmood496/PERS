@@ -11,6 +11,7 @@ class NotificationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var Title: UILabel!
     @IBOutlet weak var Description: UILabel!
+    @IBOutlet weak var AddFriendBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

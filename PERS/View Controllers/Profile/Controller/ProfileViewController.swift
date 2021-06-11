@@ -9,11 +9,18 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     //MARK: IBOUTLET'S
+    @IBOutlet weak var UserNameLabel: UILabel!
+    @IBOutlet weak var UserEmailLabel: UILabel!
+    @IBOutlet weak var FullNameLabel: UILabel!
+    @IBOutlet weak var EmailAddressLabel: UILabel!
+    @IBOutlet weak var LocationLabel: UILabel!
+    @IBOutlet weak var PasswordLabel: UILabel!
     //MARK: VARIABLE'S
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.assignDataToUI()
     }
     
     @IBAction func AddFriendsBtnAction(_ sender: Any) {
@@ -23,6 +30,17 @@ class ProfileViewController: UIViewController {
     
     @IBAction func SignoutBtnAction(_ sender: Any) {
         PopupHelper.changeRootViewController(storyboardName: "Main", ViewControllerId: "LoginVC")
+    }
+    
+    func assignDataToUI() {
+        if let userData = CommonHelper.getCachedUserData(){
+            UserNameLabel.text = userData.full_name
+            UserEmailLabel.text = userData.email
+            FullNameLabel.text = userData.full_name
+            EmailAddressLabel.text = userData.email
+            LocationLabel.text = userData.location
+            PasswordLabel.text = userData.password
+        }
     }
 }
 

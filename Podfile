@@ -19,4 +19,10 @@ target 'PERS' do
   pod 'ChameleonFramework/Swift'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod "SwiftyCam"
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 end

@@ -76,7 +76,7 @@ class CommonHelper
         let userDefaults = UserDefaults.standard
         do {
             let user = try userDefaults.getObject(forKey: Constant.login_key, castTo: LoginModel.self)
-            print(user.id ?? "0")
+            print(user.full_name ?? "0")
             return user
         } catch {
             print(error.localizedDescription)

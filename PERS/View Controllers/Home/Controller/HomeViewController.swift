@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class HomeViewController: UIViewController {
     
@@ -23,6 +24,9 @@ class HomeViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+    }
+    @IBAction func EmergencyAlertBtnAction(_ sender: Any) {
+        self.openCamera()
     }
 }
 
@@ -89,5 +93,40 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
                 return CGSize(width: 0, height: 0)
             }
         }
+    }
+}
+
+extension HomeViewController{
+    func openCamera()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }else {
+            self.AlertMessage(message: "You don't have camera")
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let editedImage = info[.editedImage] as? UIImage {
+            //self.SelectedImage.image = editedImage
+            picker.dismiss(animated: true, completion: nil)
+            //self.performSegue(withIdentifier: "PhotoModeratedSegue", sender: nil)
+            
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            //self.SelectedImage.image = originalImage
+            picker.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func AlertMessage(message:String)
+    {
+        let alert = UIAlertController.init(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert,animated: true,completion: nil)
     }
 }

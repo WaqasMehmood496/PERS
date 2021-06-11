@@ -30,4 +30,9 @@ struct Constant {
     
     //MARK: MODELS KEY'S
     static let id = "id"
+    static let email = "email"
+    static let full_name = "full_name"
+    static let location = "location"
+    static let mobilenumber = "mobilenumber"
+    static let password = "password"
 }

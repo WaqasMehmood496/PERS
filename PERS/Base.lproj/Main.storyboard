@@ -1429,7 +1429,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFJ-Eh-rim">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rounded Rectangle 1" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-a1-OMW">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clip" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-a1-OMW">
                                                 <rect key="frame" x="140" y="16" width="135" height="135"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="135" id="9iR-EC-70L"/>
@@ -1705,6 +1705,11 @@
                                                                 <constraint firstItem="geT-op-GHD" firstAttribute="top" secondItem="IcF-BK-A2Q" secondAttribute="top" id="mKJ-zP-h6P"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="Description" destination="I3J-Uh-9Tb" id="RNt-Zo-P9f"/>
+                                                            <outlet property="Title" destination="hbP-Qp-yTm" id="XFP-oi-bvJ"/>
+                                                            <outlet property="UserImage" destination="7PN-FI-XDX" id="NzP-YX-Pg2"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
@@ -1735,6 +1740,18 @@
                                                     <action selector="AddFriendsBtnAction:" destination="Nkm-Ww-MzS" eventType="touchUpInside" id="NQD-eS-gcO"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFd-dC-RGL">
+                                                <rect key="frame" x="241" y="117" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="Rq1-nc-xhf"/>
+                                                    <constraint firstAttribute="height" constant="30" id="vU5-yp-Mz2"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="camera.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="CaptureImageBtnAction:" destination="Nkm-Ww-MzS" eventType="touchUpInside" id="8E8-fn-246"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1751,11 +1768,13 @@
                                             <constraint firstItem="rjh-hM-w44" firstAttribute="leading" secondItem="SB7-XX-VSu" secondAttribute="leading" id="HNV-KT-t4T"/>
                                             <constraint firstAttribute="height" constant="725" id="ILv-JQ-QqY"/>
                                             <constraint firstItem="yYY-QE-MvC" firstAttribute="top" secondItem="SB7-XX-VSu" secondAttribute="top" id="K77-wl-SPZ"/>
+                                            <constraint firstItem="FFd-dC-RGL" firstAttribute="bottom" secondItem="hVf-a1-OMW" secondAttribute="bottom" constant="-4" id="Mz9-9d-Pds"/>
                                             <constraint firstItem="OtJ-ab-ff7" firstAttribute="leading" secondItem="RJp-au-5fd" secondAttribute="leading" id="ONY-t1-UD2"/>
                                             <constraint firstItem="rjh-hM-w44" firstAttribute="trailing" secondItem="SB7-XX-VSu" secondAttribute="trailing" id="SbK-4H-0ra"/>
                                             <constraint firstItem="5JW-U9-I3A" firstAttribute="leading" secondItem="8Nf-zH-bDk" secondAttribute="leading" id="Uvd-pF-5me"/>
                                             <constraint firstItem="5JW-U9-I3A" firstAttribute="top" secondItem="8Nf-zH-bDk" secondAttribute="bottom" id="VtR-zf-2Rp"/>
                                             <constraint firstItem="hVf-a1-OMW" firstAttribute="top" secondItem="DFJ-Eh-rim" secondAttribute="top" constant="16" id="W2c-bN-5ph"/>
+                                            <constraint firstItem="FFd-dC-RGL" firstAttribute="trailing" secondItem="hVf-a1-OMW" secondAttribute="trailing" constant="-4" id="Ytw-uz-KOO"/>
                                             <constraint firstItem="OtJ-ab-ff7" firstAttribute="trailing" secondItem="RJp-au-5fd" secondAttribute="trailing" id="ZKX-UZ-vrv"/>
                                             <constraint firstItem="hVf-a1-OMW" firstAttribute="centerX" secondItem="DFJ-Eh-rim" secondAttribute="centerX" constant="0.5" id="fZs-Hr-uu5"/>
                                             <constraint firstItem="yYY-QE-MvC" firstAttribute="trailing" secondItem="OtJ-ab-ff7" secondAttribute="trailing" id="hnB-na-byd"/>
@@ -1795,17 +1814,25 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="w9F-2X-asZ">
                         <barButtonItem key="backBarButtonItem" title=" " id="C18-PV-I0T"/>
-                        <barButtonItem key="rightBarButtonItem" image="Exit" id="fnj-X5-JNt">
+                        <barButtonItem key="leftBarButtonItem" image="Exit" id="fnj-X5-JNt">
                             <connections>
                                 <action selector="SignoutBtnAction:" destination="Nkm-Ww-MzS" id="igp-Ri-H2Z"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="checkmark" catalog="system" id="WYy-xg-W9T">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="UpdateProfileImageBtnAction:" destination="Nkm-Ww-MzS" id="lpm-pN-KuK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="EmailAddressLabel" destination="gE6-pv-cjy" id="QsC-DZ-jgj"/>
+                        <outlet property="FriendListTableView" destination="z8t-Rc-3O2" id="kjd-YN-Iwo"/>
                         <outlet property="FullNameLabel" destination="3gH-ai-rwf" id="kqa-Jt-CGQ"/>
                         <outlet property="LocationLabel" destination="Foi-jL-ax6" id="gtz-v1-R3v"/>
                         <outlet property="PasswordLabel" destination="nA7-gW-G4h" id="fCU-gG-2MH"/>
+                        <outlet property="ProfileImage" destination="hVf-a1-OMW" id="1lx-Iu-fir"/>
                         <outlet property="UserEmailLabel" destination="5JW-U9-I3A" id="gnC-cX-yet"/>
                         <outlet property="UserNameLabel" destination="8Nf-zH-bDk" id="cE1-hG-haJ"/>
                         <segue destination="Im6-jy-ZtT" kind="show" id="Y6b-Yq-aMG"/>
@@ -1907,6 +1934,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="AddFriendBtn" destination="SM5-mB-yF9" id="tjv-v5-4Eh"/>
+                                            <outlet property="Description" destination="SuN-Ij-c8X" id="0Td-jR-Qus"/>
+                                            <outlet property="Title" destination="HwQ-cC-E8V" id="fvV-8r-059"/>
+                                            <outlet property="UserImage" destination="Pfc-Y6-jNB" id="Ujn-lV-sfo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1960,6 +1990,81 @@
             </objects>
             <point key="canvasLocation" x="2455" y="1588"/>
         </scene>
+        <!--Maps View Controller-->
+        <scene sceneID="4gZ-ac-n21">
+            <objects>
+                <viewController storyboardIdentifier="MapsViewController" id="CKq-Iy-RZf" customClass="MapsViewController" customModule="PERS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HR9-0e-lZk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0LF-SG-gJP" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="91" width="414" height="805"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pq-RV-haC">
+                                <rect key="frame" x="46" y="809" width="304" height="45"/>
+                                <color key="backgroundColor" name="Gradient Light Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4Fg-In-tVz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneBtnPressed:" destination="CKq-Iy-RZf" eventType="touchUpInside" id="a5P-vV-cWD"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-ur-Le6">
+                                <rect key="frame" x="8" y="44" width="398" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="olb-hM-lsy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="Field Border Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bNZ-RT-Pjh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XlW-ur-Le6" firstAttribute="leading" secondItem="bNZ-RT-Pjh" secondAttribute="leading" constant="8" id="3TP-v1-TvI"/>
+                            <constraint firstAttribute="bottom" secondItem="0LF-SG-gJP" secondAttribute="bottom" id="5QL-KC-hOG"/>
+                            <constraint firstItem="bNZ-RT-Pjh" firstAttribute="trailing" secondItem="XlW-ur-Le6" secondAttribute="trailing" constant="8" id="5sG-bt-Mtf"/>
+                            <constraint firstItem="bNZ-RT-Pjh" firstAttribute="trailing" secondItem="7pq-RV-haC" secondAttribute="trailing" constant="64" id="IJj-v5-37n"/>
+                            <constraint firstItem="7pq-RV-haC" firstAttribute="leading" secondItem="bNZ-RT-Pjh" secondAttribute="leading" constant="46" id="Om9-iK-fjF"/>
+                            <constraint firstItem="bNZ-RT-Pjh" firstAttribute="bottom" secondItem="7pq-RV-haC" secondAttribute="bottom" constant="8" id="QTv-hy-PGX"/>
+                            <constraint firstItem="0LF-SG-gJP" firstAttribute="leading" secondItem="bNZ-RT-Pjh" secondAttribute="leading" id="SBL-Kz-t7R"/>
+                            <constraint firstItem="bNZ-RT-Pjh" firstAttribute="trailing" secondItem="0LF-SG-gJP" secondAttribute="trailing" id="gf8-jy-pBD"/>
+                            <constraint firstItem="XlW-ur-Le6" firstAttribute="top" secondItem="bNZ-RT-Pjh" secondAttribute="top" id="oMi-4A-tO1"/>
+                            <constraint firstItem="0LF-SG-gJP" firstAttribute="top" secondItem="XlW-ur-Le6" secondAttribute="bottom" constant="2" id="r8w-5x-lIo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblAddress" destination="XlW-ur-Le6" id="5gI-JN-Wrz"/>
+                        <outlet property="mapView" destination="0LF-SG-gJP" id="ch3-Zx-MQD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="31u-qj-GPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="836"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Add User Male" width="18.5" height="18.5"/>
@@ -1978,8 +2083,9 @@
         <image name="Play Button Circled copy" width="31" height="31"/>
         <image name="Play button" width="30" height="30"/>
         <image name="Profile1" width="32" height="40.5"/>
-        <image name="Rounded Rectangle 1" width="108" height="108"/>
         <image name="Rounded Rectangle 3" width="202.5" height="135"/>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <namedColor name="Button Theam Color">
             <color red="0.88200002908706665" green="0.13699999451637268" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

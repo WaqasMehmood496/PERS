@@ -50,6 +50,10 @@
 		76756991267239BE0040A593 /* LocalMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76756990267239BE0040A593 /* LocalMapViewController.swift */; };
 		7675699526723B2B0040A593 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 7675699426723B2B0040A593 /* style.json */; };
 		7675699A26723B650040A593 /* MapMarkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7675699926723B650040A593 /* MapMarkerModel.swift */; };
+		76804219267A444100F10250 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76804218267A444100F10250 /* MapsViewController.swift */; };
+		7680421E267A450200F10250 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7680421D267A450200F10250 /* LocationModel.swift */; };
+		76804222267A460700F10250 /* HelpingDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76804221267A460700F10250 /* HelpingDelegates.swift */; };
+		7680424D267B6A9400F10250 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7680424C267B6A9400F10250 /* FriendModel.swift */; };
 		768521132670C2A300732553 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768521122670C2A300732553 /* LoginModel.swift */; };
 		768521172670CE7C00732553 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768521162670CE7C00732553 /* LoginViewController.swift */; };
 		76A2B3382672089900802C4D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A2B3372672089900802C4D /* SignUpViewController.swift */; };
@@ -113,6 +117,10 @@
 		76756990267239BE0040A593 /* LocalMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMapViewController.swift; sourceTree = "<group>"; };
 		7675699426723B2B0040A593 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		7675699926723B650040A593 /* MapMarkerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMarkerModel.swift; sourceTree = "<group>"; };
+		76804218267A444100F10250 /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		7680421D267A450200F10250 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		76804221267A460700F10250 /* HelpingDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpingDelegates.swift; sourceTree = "<group>"; };
+		7680424C267B6A9400F10250 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		768521122670C2A300732553 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		768521162670CE7C00732553 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		76A2B3372672089900802C4D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +231,7 @@
 				766A2B302670BFA40003A37E /* WebServiceResponseDelegate.swift */,
 				766A2B312670BFA40003A37E /* WebServiceDataParsingDelegate.swift */,
 				766A2B322670BFA40003A37E /* DatabaseRepresentation.swift */,
+				76804221267A460700F10250 /* HelpingDelegates.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -239,6 +248,7 @@
 		7675696B26721DF50040A593 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				7680424B267B6A8300F10250 /* Model */,
 				7675696D26721E010040A593 /* View */,
 				7675696C26721DFC0040A593 /* Controller */,
 			);
@@ -331,9 +341,52 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		76804215267A441F00F10250 /* Location Map */ = {
+			isa = PBXGroup;
+			children = (
+				7680421C267A44E700F10250 /* Model */,
+				7680421B267A44E100F10250 /* View */,
+				76804216267A442D00F10250 /* Controller */,
+			);
+			path = "Location Map";
+			sourceTree = "<group>";
+		};
+		76804216267A442D00F10250 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76804218267A444100F10250 /* MapsViewController.swift */,
+			);
+			name = Controller;
+			path = "../New Group/Controller";
+			sourceTree = "<group>";
+		};
+		7680421B267A44E100F10250 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7680421C267A44E700F10250 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7680421D267A450200F10250 /* LocationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7680424B267B6A8300F10250 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7680424C267B6A9400F10250 /* FriendModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7685210D2670C24E00732553 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76804215267A441F00F10250 /* Location Map */,
 				7675697626722AC80040A593 /* Player */,
 				767569712672203D0040A593 /* Add Friends */,
 				7675696B26721DF50040A593 /* Profile */,
@@ -680,12 +733,15 @@
 				766A2B392670BFA40003A37E /* UIViewController+Additions.swift in Sources */,
 				766A2B552670BFA40003A37E /* Constant.swift in Sources */,
 				766A2B562670BFA40003A37E /* Globals.swift in Sources */,
+				76804219267A444100F10250 /* MapsViewController.swift in Sources */,
 				76756991267239BE0040A593 /* LocalMapViewController.swift in Sources */,
 				766A2B482670BFA40003A37E /* AlamofireHelper.swift in Sources */,
 				766A2B522670BFA40003A37E /* WebServiceResponseDelegate.swift in Sources */,
 				766A2B542670BFA40003A37E /* DatabaseRepresentation.swift in Sources */,
 				766A2B412670BFA40003A37E /* UISearchBar+Additions.swift in Sources */,
 				768521132670C2A300732553 /* LoginModel.swift in Sources */,
+				7680424D267B6A9400F10250 /* FriendModel.swift in Sources */,
+				76804222267A460700F10250 /* HelpingDelegates.swift in Sources */,
 				766A2B3A2670BFA40003A37E /* NotificationExtension.swift in Sources */,
 				766A2B462670BFA40003A37E /* CommonHelper.swift in Sources */,
 				766A2B3C2670BFA40003A37E /* UIButton+Additions.swift in Sources */,
@@ -713,6 +769,7 @@
 				766A2B4D2670BFA40003A37E /* AsyncUtil.swift in Sources */,
 				7675696F26721E0D0040A593 /* ProfileViewController.swift in Sources */,
 				766A2B372670BFA40003A37E /* UIImage+Additions.swift in Sources */,
+				7680421E267A450200F10250 /* LocationModel.swift in Sources */,
 				766A2B532670BFA40003A37E /* WebServiceDataParsingDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

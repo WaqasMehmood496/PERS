@@ -61,22 +61,11 @@ class CommonHelper
             print(error.localizedDescription)
         }
     }
-    
-    //    class func saveCachedUserServiceData(_ userData:[LoginModel]){
-    //        let userDefaults = UserDefaults.standard
-    //        do {
-    //
-    //            try userDefaults.setObject(userData, forKey: Constant.login_user_service)
-    //
-    //        } catch {
-    //            print(error.localizedDescription)
-    //        }
-    //    }
     class func getCachedUserData() -> LoginModel? {
         let userDefaults = UserDefaults.standard
         do {
             let user = try userDefaults.getObject(forKey: Constant.login_key, castTo: LoginModel.self)
-            print(user.full_name ?? "0")
+            print(user.name ?? "0")
             return user
         } catch {
             print(error.localizedDescription)
@@ -184,7 +173,6 @@ class CommonHelper
             }
             
         }
-        
     }
     
     // MARK:- ALERT CONTROLLER

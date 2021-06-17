@@ -9,6 +9,7 @@ import UIKit
 
 class NotificationTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var UserImage: UIImageView!
     @IBOutlet weak var Title: UILabel!
     @IBOutlet weak var Description: UILabel!
     @IBOutlet weak var AddFriendBtn: UIButton!

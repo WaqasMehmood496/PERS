@@ -17,16 +17,4 @@ class FriendModel: Codable {
         self.id = id
     }
 }
-//
-//class FriendStatusModel: Codable {
-//    
-//    var isFriend:Bool!
-//    init(isFriend: Bool? = false) {
-//        self.isFriend = isFriend
-//    }
-//    
-//    init?(dic:NSDictionary) {
-//        let isFriend = (dic as AnyObject).value(forKey: Constant.isFriend) as! Bool
-//        self.isFriend = isFriend
-//    }
-//}
+

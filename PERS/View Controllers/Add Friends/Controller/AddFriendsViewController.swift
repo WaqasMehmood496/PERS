@@ -17,13 +17,49 @@ class AddFriendsViewController: UIViewController {
     var mAuth = Auth.auth()
     var ref: DatabaseReference!
     var allUser = [LoginModel]()
+    var friendList = [LoginModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         ref = Database.database().reference()
         self.getAllUsersRecord()
     }
+    //Get all users record
+    //Check who is friend
+    //Check who sended me request
+}
+
+//MARK:- HELPING METHOD'S EXTENSION
+extension AddFriendsViewController{
+    //THIS METHOD WILL FILTER RECORD WITH FRIENDS
+    func filterAllUserFromAlreadyFriends() {
+        var tempArray = [LoginModel]()
+        for user in self.allUser{
+            for friend in self.friendList{
+                if user.id != friend.id{
+                    tempArray.append(user)
+                }
+            }
+        }
+        self.allUser = tempArray
+        self.getAllFriendRequestsFromFirebase()
+    }
+    
+    //THIS METHOD WILL FILTER RECORD WITH USERS REQUESTS
+    func filterAllUserFromFriendRequest(friendsRequests:[FriendRequestModel]) {
+        
+        var tempArray = [LoginModel]()
+        for user in self.allUser{
+            for friend in friendsRequests{
+                if user.id != friend.id{
+                    tempArray.append(user)
+                }
+            }
+        }
+        self.allUser = tempArray
+        self.FriendListTableView.reloadData()
+    }
+    
 }
 
 //MARK:- FIREBASE METHOD'S EXTENSION
@@ -45,13 +81,50 @@ extension AddFriendsViewController{
                                     if let user = users{
                                         self.allUser.append(user)
                                     }
-                                    print(childSnapshot)
                                 }
                             }// End For loop
                             hud.dismiss()
                         }// End Snapshot if else statement
-                        self.FriendListTableView.reloadData()
+                        print(self.allUser.count)
+                        self.filterAllUserFromAlreadyFriends()
                         hud.dismiss()
+                    }// End ref Child Completion Block
+                }// End Firebase user id
+                else{
+                    hud.dismiss()
+                }
+            }
+        }else{
+            PopupHelper.showAlertControllerWithError(forErrorMessage: "Internet is unavailable please check your connection", forViewController: self)
+        }//End Connectity Check Statement
+    }// End get favorite method
+    
+    //THIS METHODS WILL FETCH ALL FRIENDS REQUESTS
+    func getAllFriendRequestsFromFirebase() {
+        if Connectivity.isConnectedToNetwork(){
+            showHUDView(hudIV: .indeterminate, text: .process) { (hud) in
+                hud.show(in: self.view, animated: true)
+                if let userID = self.mAuth.currentUser?.uid{
+                    self.ref.child("Requests").child(userID).observeSingleEvent(of: .value) { (snapshot) in
+                        var friendsRequests = [FriendRequestModel]()
+                        if(snapshot.exists()) {
+                            let array:NSArray = snapshot.children.allObjects as NSArray
+                            for obj in array {
+                                let snapshot:DataSnapshot = obj as! DataSnapshot
+                                if var childSnapshot = snapshot.value as? [String : AnyObject]{
+                                    childSnapshot[Constant.id] = snapshot.key as String as AnyObject
+                                    let frindRequest = FriendRequestModel(dic: childSnapshot as NSDictionary)
+                                    if let fav = frindRequest{
+                                        friendsRequests.append(fav)
+                                    }
+                                }//End childSnapshop statement
+                            }// End For loop
+                            hud.dismiss()
+                            self.filterAllUserFromFriendRequest(friendsRequests: friendsRequests)
+                        }else{
+                            hud.dismiss()
+                            self.FriendListTableView.reloadData()
+                        }// End Snapshot if else statement
                     }// End ref Child Completion Block
                 }// End Firebase user id
                 else{
@@ -66,6 +139,7 @@ extension AddFriendsViewController{
 
 // MARK:- UITBLEVIEW DATASOURCE AND DELEGATES EXTENSION
 extension AddFriendsViewController:UITableViewDelegate,UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.allUser.count
     }
@@ -82,7 +156,8 @@ extension AddFriendsViewController:UITableViewDelegate,UITableViewDataSource{
         }
         return cell
     }
+    
     @objc func AddFriendBtnAction(_ sender:UIButton){
-        
+        //
     }
 }

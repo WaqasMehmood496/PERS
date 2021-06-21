@@ -62,6 +62,8 @@
 		76A2B33B26720DB900802C4D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A2B33A26720DB900802C4D /* ForgotPasswordViewController.swift */; };
 		76B48C2D26710EE000AF6D31 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B48C2C26710EE000AF6D31 /* NotificationsViewController.swift */; };
 		76B48C3026710F5100AF6D31 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B48C2F26710F5100AF6D31 /* NotificationTableViewCell.swift */; };
+		76D4F9532680AD3F00E0E51D /* VideosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D4F9522680AD3F00E0E51D /* VideosModel.swift */; };
+		76D4F9562680B78600E0E51D /* urlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D4F9552680B78600E0E51D /* urlHelper.swift */; };
 		76EF05402670E602007ABC58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF053F2670E602007ABC58 /* HomeViewController.swift */; };
 		76EF05442670E625007ABC58 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF05432670E625007ABC58 /* HomeCollectionViewCell.swift */; };
 		76EF05472670F33B007ABC58 /* NavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF05462670F33B007ABC58 /* NavigationBarExtension.swift */; };
@@ -131,6 +133,8 @@
 		76A2B33A26720DB900802C4D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		76B48C2C26710EE000AF6D31 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		76B48C2F26710F5100AF6D31 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		76D4F9522680AD3F00E0E51D /* VideosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosModel.swift; sourceTree = "<group>"; };
+		76D4F9552680B78600E0E51D /* urlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = urlHelper.swift; sourceTree = "<group>"; };
 		76EF053F2670E602007ABC58 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		76EF05432670E625007ABC58 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		76EF05462670F33B007ABC58 /* NavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarExtension.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 				766A2B2C2670BFA40003A37E /* NVActivityIndicatorViewable.swift */,
 				766A2B2D2670BFA40003A37E /* DataBaseHelper.swift */,
 				766A2B2E2670BFA40003A37E /* NetworkConnection.swift */,
+				76D4F9552680B78600E0E51D /* urlHelper.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 		76EF053E2670E5F2007ABC58 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76D4F9522680AD3F00E0E51D /* VideosModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -758,6 +764,7 @@
 				7630F4B5267CBCAE0064DC0F /* FriendRequestViewController.swift in Sources */,
 				76804219267A444100F10250 /* MapsViewController.swift in Sources */,
 				76756991267239BE0040A593 /* LocalMapViewController.swift in Sources */,
+				76D4F9562680B78600E0E51D /* urlHelper.swift in Sources */,
 				766A2B482670BFA40003A37E /* AlamofireHelper.swift in Sources */,
 				766A2B522670BFA40003A37E /* WebServiceResponseDelegate.swift in Sources */,
 				766A2B542670BFA40003A37E /* DatabaseRepresentation.swift in Sources */,
@@ -779,6 +786,7 @@
 				76EF05442670E625007ABC58 /* HomeCollectionViewCell.swift in Sources */,
 				766A2B432670BFA40003A37E /* AppStoryBoard.swift in Sources */,
 				766A2B442670BFA40003A37E /* UITextView+Additions.swift in Sources */,
+				76D4F9532680AD3F00E0E51D /* VideosModel.swift in Sources */,
 				766A2B3F2670BFA40003A37E /* UITexfield+Additions.swift in Sources */,
 				76B48C2D26710EE000AF6D31 /* NotificationsViewController.swift in Sources */,
 				766A2B3E2670BFA40003A37E /* Extensions.swift in Sources */,

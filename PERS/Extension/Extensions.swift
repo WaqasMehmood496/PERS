@@ -1503,3 +1503,9 @@ extension UIFont{
         return UIFont(descriptor: fractionFontDesc, size:pointSize)
     }
 }
+
+extension Date {
+  func toMillis() -> String {
+    return "\(Double(self.timeIntervalSince1970 * 1000))"
+  }
+}

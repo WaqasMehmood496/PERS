@@ -26,10 +26,13 @@ class HomeViewController: UIViewController {
     var currentLocation: CLLocation!
     var currentAddress = String()
     let image = UIImagePickerController()
+    var thumbnail = String()
+    var videoArray = [VideosModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        self.getAllVideo()
         self.collectionViewSetup()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -78,38 +81,39 @@ extension HomeViewController{
     func getCurrentAddress(location:CLLocation,hud:JGProgressHUD) {
         let loc: CLLocation = CLLocation(latitude:location.coordinate.latitude, longitude: location.coordinate.longitude)
         let ceo: CLGeocoder = CLGeocoder()
-        ceo.reverseGeocodeLocation(loc, completionHandler:
-                                    {(placemarks, error) in
-                                        if (error != nil)
-                                        {
-                                            print("reverse geodcode fail: \(error!.localizedDescription)")
-                                        }
-                                        let pm = placemarks! as [CLPlacemark]
-                                        
-                                        if pm.count > 0 {
-                                            let pm = placemarks![0]
-                                            var addressString : String = ""
-                                            if pm.subLocality != nil {
-                                                addressString = addressString + pm.subLocality! + ", "
-                                            }
-                                            if pm.thoroughfare != nil {
-                                                addressString = addressString + pm.thoroughfare! + ", "
-                                            }
-                                            if pm.locality != nil {
-                                                addressString = addressString + pm.locality! + ", "
-                                            }
-                                            if pm.country != nil {
-                                                addressString = addressString + pm.country! + ", "
-                                            }
-                                            if pm.postalCode != nil {
-                                                addressString = addressString + pm.postalCode! + " "
-                                            }
-                                            print(addressString)
-                                            self.currentAddress = addressString
-                                            hud.dismiss()
-                                            self.CameraBottomSheet()
-                                        }
-                                    })
+        ceo.reverseGeocodeLocation(
+            loc, completionHandler:
+                {(placemarks, error) in
+                    if (error != nil)
+                    {
+                        print("reverse geodcode fail: \(error!.localizedDescription)")
+                    }
+                    let pm = placemarks! as [CLPlacemark]
+                    
+                    if pm.count > 0 {
+                        let pm = placemarks![0]
+                        var addressString : String = ""
+                        if pm.subLocality != nil {
+                            addressString = addressString + pm.subLocality! + ", "
+                        }
+                        if pm.thoroughfare != nil {
+                            addressString = addressString + pm.thoroughfare! + ", "
+                        }
+                        if pm.locality != nil {
+                            addressString = addressString + pm.locality! + ", "
+                        }
+                        if pm.country != nil {
+                            addressString = addressString + pm.country! + ", "
+                        }
+                        if pm.postalCode != nil {
+                            addressString = addressString + pm.postalCode! + " "
+                        }
+                        print(addressString)
+                        self.currentAddress = addressString
+                        hud.dismiss()
+                        self.CameraBottomSheet()
+                    }
+                })
     }
     
     func getName() -> String {
@@ -178,37 +182,94 @@ extension HomeViewController{
         })
     }
     
-    
     //UPDATE IMAGE URL INTO USER TABLE
     func SaveDatatoDB(videoUrl:String){
         guard let user = self.mAuth.currentUser?.uid else {return}
-        ref.child("Videos").child(user).childByAutoId().setValue([
+        ref.child("MyVideos").child(user).childByAutoId().setValue([
+            "thumbnail":"\(self.thumbnail)",
             "videoLatitude":"\(self.currentLocation.coordinate.latitude)",
             "videoLocation":self.currentAddress,
             "videoLongitude":"\(self.currentLocation.coordinate.longitude)",
             "videoURL":videoUrl,
         ])
-        
-        //        //UPDATE DATA INTO CACHE
-        //        if let userData = CommonHelper.getCachedUserData(){
-        //            userData.imageURL = imageurl
-        //            CommonHelper.saveCachedUserData(userData)
-        //        }
-        
-        //MARK:- Update Videos
+        ref.child("Videos").childByAutoId().setValue([
+            "thumbnail":"\(self.thumbnail)",
+            "uploaderID":user,
+            "videoLatitude":"\(self.currentLocation.coordinate.latitude)",
+            "videoLocation":self.currentAddress,
+            "videoLongitude":"\(self.currentLocation.coordinate.longitude)",
+            "videoURL":videoUrl,
+        ])
     }
     
+    // GET ALL FAVORITES VIDEOS FROM FIREBASE DATABASE
+    func getAllVideo() {
+        if Connectivity.isConnectedToNetwork(){
+            showHUDView(hudIV: .indeterminate, text: .process) { (hud) in
+                hud.show(in: self.view, animated: true)
+                //self.favoritesArray.removeAll()
+                //if let userID = self.mAuth.currentUser?.uid{
+                let reference = self.ref.child("Videos").queryLimited(toLast: 5)
+                reference.observe(.value) { (snapshot) in
+                    if(snapshot.exists()) {
+                        print(snapshot)
+                        let array:NSArray = snapshot.children.allObjects as NSArray
+                        for obj in array {
+                            let snapshot:DataSnapshot = obj as! DataSnapshot
+                            if var childSnapshot = snapshot.value as? [String : AnyObject]
+                            {
+                                childSnapshot[Constant.id] = snapshot.key as String as AnyObject
+                                let videos = VideosModel(dic: childSnapshot as NSDictionary)
+                                if let video = videos{
+                                    self.videoArray.append(video)
+                                }
+                            }
+                        }// End For loop
+                        hud.dismiss()
+                        self.RecentlyAddedCV.reloadData()
+                        self.MyAreaCV.reloadData()
+                    }else{
+                        hud.dismiss()
+                    }// End Snapshot if else statement
+                }
+            }// End Firebase user id
+        }else{
+            PopupHelper.showAlertControllerWithError(forErrorMessage: "Internet is unavailable please check your connection", forViewController: self)
+        }//End Connectity Check Statement
+    }// End get favorite method
 }
 
+
+//MARK:- UICOLLECTION VIEW DELEGATES AND DATASOURCE METHOD"S EXTENSION
 extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if collectionView.tag == 0{
+            return self.videoArray.count
+        }else{
+            return self.videoArray.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideosCell", for: indexPath) as! HomeCollectionViewCell
-        cell.PlayButton.addTarget(self, action: #selector(PlayVideoBtnAction(_:)), for: .touchUpInside)
-        cell.PlayButton.tag = indexPath.row
+        if collectionView.tag == 0{
+            cell.PlayButton.addTarget(self, action: #selector(PlayVideoBtnAction(_:)), for: .touchUpInside)
+            cell.PlayButton.tag = indexPath.row
+            
+            if let data = Data(base64Encoded: self.videoArray[indexPath.row].thumbnail){
+                cell.VideoThumbnail.image = UIImage(data: data)
+            }
+            cell.VideoDate.text = " "
+        }else{
+            cell.PlayButton.addTarget(self, action: #selector(PlayVideoBtnAction(_:)), for: .touchUpInside)
+            cell.PlayButton.tag = indexPath.row
+            
+            if let data = Data(base64Encoded: self.videoArray[indexPath.row].thumbnail){
+                cell.VideoThumbnail.image = UIImage(data: data)
+            }
+            cell.VideoDate.text = " "
+        }
+        
         return cell
     }
     
@@ -295,15 +356,29 @@ extension HomeViewController {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let movie = info[.mediaURL] as? URL {
-            //Call send video into firebase method
-            self.uploadVideo(movie, "") { (url, storageRef) in
-                print(url)
-            } progressEsc: { (progress) in
-                print(progress)
-            } completionEsc: {
-                print("escape")
-            } errorEsc: { (error) in
-                print(error.localizedDescription)
+            let file = MediaFile()
+            file.videoUrl = movie
+            UrlHelper().getThumbnailImageFromVideoUrl(mediaFile: file) { (media) in
+                if let image = media.image{
+                    if let thumbnail = image.jpegData(compressionQuality: 0.4){
+                        
+                        self.thumbnail = thumbnail.base64EncodedString()
+                        print(self.thumbnail)
+                        self.uploadVideo(movie, "") { (url, storageRef) in
+                            print(url)
+                        } progressEsc: { (progress) in
+                            print(progress)
+                        } completionEsc: {
+                            print("escape")
+                        } errorEsc: { (error) in
+                            print(error.localizedDescription)
+                        }
+                    }else{
+                        PopupHelper.showAlertControllerWithError(forErrorMessage: "Video thumbnail generating fail please try again", forViewController: self)
+                    }
+                }else{
+                    PopupHelper.showAlertControllerWithError(forErrorMessage: "Unknown error occur please try again", forViewController: self)
+                }
             }
         }
         picker.dismiss(animated: true, completion: nil)

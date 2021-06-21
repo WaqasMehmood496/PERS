@@ -46,4 +46,10 @@ struct Constant {
     static let number = "number"
     static let isFriend = "isFriend"
     static let country = "country"
+    static let thumbnail = "thumbnail"
+    static let uploaderID = "uploaderID"
+    static let videoLatitude = "videoLatitude"
+    static let videoLocation = "videoLocation"
+    static let videoLongitude = "videoLongitude"
+    static let videoURL = "videoURL"
 }

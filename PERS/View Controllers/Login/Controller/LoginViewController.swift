@@ -102,8 +102,8 @@ extension LoginViewController{
                                     if let userID = self.mAuth.currentUser?.uid{
                                         print(userID)
                                         self.ref.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-                                            print(snapshot)
-                                            let value = snapshot.value as? NSDictionary
+                                            var value = snapshot.value as? NSDictionary
+                                            //let key = snapshot.key as? NSDictionary
                                             let user = LoginModel(dic: value as! NSDictionary)
                                             guard let data = user else{return}
                                             CommonHelper.saveCachedUserData(data)

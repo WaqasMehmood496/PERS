@@ -160,7 +160,7 @@ extension SignUpViewController{
             "password":password,
         ])
         // save into cache
-        let currentuser = LoginModel(email: email, imageURL: "", latitude: String(self.userLocation.address_lat), location: String(self.userLocation.address_lng), name: fullname, number: mobileNumber, password: password)
+        let currentuser = LoginModel(id: user, email: email, imageURL: "null", latitude: String(self.userLocation.address_lat), location: String(self.userLocation.address), longitude: String(self.userLocation.address_lng), name: fullname, number: mobileNumber, password: password, country: String(self.userLocation.country_id))
         CommonHelper.saveCachedUserData(currentuser)
         // Change root view controller
         PopupHelper.changeRootView(storyboardName: "Main", ViewControllerId: "Tabbar")

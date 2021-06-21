@@ -19,12 +19,13 @@ class LoginModel: Codable {
     var password:String!
     var country:String!
     
-    init(id:String? = nil,email: String? = nil,imageURL: String? = nil,latitude: String? = nil,location: String? = nil,name: String? = nil,number:String? = nil,password:String? = nil,country:String? = nil) {
+    init(id:String? = nil,email: String? = nil,imageURL: String? = nil,latitude: String? = nil,location: String? = nil,longitude:String? = nil,name: String? = nil,number:String? = nil,password:String? = nil,country:String? = nil) {
         self.id = id
         self.email = email
         self.imageURL = imageURL
         self.latitude = latitude
         self.location = location
+        self.longitude = longitude
         self.name = name
         self.number = number
         self.password = password
@@ -38,6 +39,7 @@ class LoginModel: Codable {
         let imageURL = (dic as AnyObject).value(forKey: Constant.imageURL) as? String
         let latitude = (dic as AnyObject).value(forKey: Constant.latitude) as? String
         let location = (dic as AnyObject).value(forKey: Constant.location) as? String
+        let longitude = (dic as AnyObject).value(forKey: Constant.longitude) as? String
         let name = (dic as AnyObject).value(forKey: Constant.name) as? String
         let number = (dic as AnyObject).value(forKey: Constant.number) as? String
         let password = (dic as AnyObject).value(forKey: Constant.password) as? String
@@ -48,6 +50,7 @@ class LoginModel: Codable {
         self.imageURL = imageURL
         self.latitude = latitude
         self.location = location
+        self.longitude = longitude
         self.name = name
         self.number = number
         self.password = password

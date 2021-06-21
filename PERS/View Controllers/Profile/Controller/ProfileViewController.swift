@@ -30,9 +30,9 @@ class ProfileViewController: UIViewController, FriendRequestsDelegate {
     var ref: DatabaseReference!
     var friendList = [LoginModel]()
     var allUser = [LoginModel]()
-    let image = UIImagePickerController()
     var isImageUpdate = false
     var friendsRequests = [FriendRequestModel]()
+    let image = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,7 +159,7 @@ extension ProfileViewController{
         }//End Connectity Check Statement
     }// End get favorite method
     
-    // GET ALL FAVORITES VIDEOS FROM FIREBASE DATABASE
+    // GET ALL FRIENDS VIDEOS FROM FIREBASE DATABASE
     func getFavoritesFromFirebase() {
         if Connectivity.isConnectedToNetwork(){
             showHUDView(hudIV: .indeterminate, text: .process) { (hud) in
@@ -290,6 +290,12 @@ extension ProfileViewController{
                 hud.dismiss()
             }
         })
+        
+        //UPDATE DATA INTO CACHE
+        if let userData = CommonHelper.getCachedUserData(){
+            userData.imageURL = imageurl
+            CommonHelper.saveCachedUserData(userData)
+        }
     }
 }
 

@@ -24,9 +24,6 @@ class AddFriendsViewController: UIViewController {
         ref = Database.database().reference()
         self.getAllUsersRecord()
     }
-    //Get all users record
-    //Check who is friend
-    //Check who sended me request
 }
 
 //MARK:- HELPING METHOD'S EXTENSION
@@ -135,6 +132,18 @@ extension AddFriendsViewController{
             PopupHelper.showAlertControllerWithError(forErrorMessage: "Internet is unavailable please check your connection", forViewController: self)
         }//End Connectity Check Statement
     }// End get favorite method
+    
+    func addIntoMyFriendRequest(friendId:String,index:Int){
+        guard let user = mAuth.currentUser?.uid else {
+            return
+        }
+        if let currentUser = CommonHelper.getCachedUserData(){
+            ref.child("Requests").child(friendId).child(user).setValue([
+                "imageURL":currentUser.imageURL,
+                "name":currentUser.name
+            ])
+        }
+    }// End Add in to favorites method
 }
 
 // MARK:- UITBLEVIEW DATASOURCE AND DELEGATES EXTENSION
@@ -158,6 +167,7 @@ extension AddFriendsViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     @objc func AddFriendBtnAction(_ sender:UIButton){
-        //
+        /// - TAG:  Send friend request
+        self.addIntoMyFriendRequest(friendId: self.friendList[sender.tag].id, index: sender.tag)
     }
 }

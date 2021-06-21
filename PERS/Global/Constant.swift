@@ -41,6 +41,7 @@ struct Constant {
     static let address_lng = "address_lng"
     static let imageURL = "imageURL"
     static let latitude = "latitude"
+    static let longitude = "longitude"
     static let name = "name"
     static let number = "number"
     static let isFriend = "isFriend"
